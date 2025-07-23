@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.chartt{margin-left: 80%;
+        margin-top: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #5c7ce3;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+input, select, button {
+    padding: 8px;
+    margin-top:8px;
+
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-group input, .form-group select {
+    width: 48%;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-group button {
+    flex: 1;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #0b1b4f;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: aliceblue;
+}
+
+.selected {
+    background-color: aliceblue;
+}
+
+.warning {
+    background-color: #ffcdd2 ; /* light red */
+  }
+  
+  .top-performer {
+    background-color: #c8e6c9 ; /* light green */
+    font-weight: bold;
+  }
+  
+.dashboard {
+    margin-top: 5px;
+    background: #d4def7;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+tr:hover {
+    background-color: rgb(175, 175, 175);
+    cursor: pointer; /* changes the cursor to a pointer (hand) */
+}
+  
+tr.warning:hover {
+    background-color: rgb(175, 175, 175) !important;
+    cursor: pointer; /* ensures even warning rows use pointer cursor */
+}
+  
+tr.top-performer:hover {
+    background-color: rgb(175, 175, 175) !important;
+    cursor: pointer; /* ensures even warning rows use pointer cursor */
+}
+
+.dashboard span {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.search-sort-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-sort-container input, .search-sort-container select {
+    width: 30%;
+}
+
+/* ✅ Autofill fix (especially for Chrome) */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: black !important;
+    background-color: white !important;
+}
+
+/* ✅ Optional: consistent input focus color */
+input:focus {
+    background-color: white;
+    outline: none;
+}
+
+
+@media (max-width: 600px) {
+    .form-group {
+      flex-direction: column;
+    }
+  
+    .form-group input,
+    .form-group select {
+      width: 100%;
+    }
+  
+    .search-sort-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .search-sort-container input,
+    .search-sort-container select {
+      width: 100%;
+    }
+  
+    .btn-group {
+      flex-direction: column;
+    }
+
+    table {
+        display:block;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+      }
+      #chartContainer {
+        width: 100%;
+        overflow-x: auto;
+      }
+      
+      #studentChart {
+        max-width: 100%;
+      }
+    
+  }
+
+  

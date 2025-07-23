@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Student Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Smart Student Assistant</h2>
+
+    <div id="lastUpdated" style="margin-top: 10px; font-style: italic; color: rgb(0, 0, 0);"></div>
+
+    <div>
+      <label for="topicInput">Enter your subject/topic:</label>
+      <input type="text" id="topicInput" placeholder="Enter topic here" />
+      <button onclick="getRecommendations()">Get Recommendations</button>
+    </div>
+    <div id="recommendations">
+      <h3>Recommended YouTube Videos:</h3>
+      <ul id="youtubeLinks"></ul>
+    
+      <h3>Recommended Websites:</h3>
+      <ul id="websiteLinks"></ul>
+    </div>
+    
+
+    <button class="chartt" onclick="toggleChart()">Marks & Attendance Chart</button>
+    
+    <div id="chartContainer" style="display: none; margin-top: 30px;">
+      <canvas id="studentChart"></canvas>
+    </div>
+
+    <div class="dashboard" style="margin-top: 10px;">
+      <button onclick="predictPerformance()">🎯 Predict Final Term Performance</button>
+      <button onclick="detectRisk()">⚠️ Detect At-Risk Students</button>
+      <div id="aiOutput" style="margin-top: 10px; font-weight: bold;"></div>
+    </div>
+
+
+    <!-- 📊 Dashboard Above Form -->
+    <div class="dashboard" id="dashboard">
+      <span class="dash">Total Students: 0</span>
+      <span class="dash">Lowest Attendance: 0%</span>
+      <span class="dash">Highest Attendance: 0%</span>
+    </div>
+
+    <form id="studentForm">
+      <div class="form-group">
+        <input type="text" id="studentName" placeholder="Student Name" required>
+        <input type="text" id="marks" placeholder="Marks (%)" required>
+      </div>
+      
+      <div class="form-group">
+        <input type="text" id="rollNumber" placeholder="Roll Number" required>
+        <input type="text" id="attendance" placeholder="Attendance (%)" required>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="course" placeholder="Course" required>
+        <select id="feePaymentStatus" required>
+          <option value="">Select Fee Payment Status</option>
+          <option value="Paid">Paid</option>
+          <option value="Pending">Pending</option>
+        </select>
+      </div>
+
+      <div class="btn-group">
+        <button type="submit">Add Student</button>
+        <button type="button" id="selectBtn">Select Student</button>
+        <button type="button" id="updateBtn">Update Student</button>
+        <button type="button" id="deleteBtn">Delete Student</button>
+      </div>
+    </form>
+
+    <!-- Search, Filter, and Sort Controls -->
+    <div class="search-sort-container">
+      <input type="text" id="searchInput" placeholder="Search by name, roll number, or course">
+      <select id="filterAttendance">
+        <option value="all">All Attendance</option>
+        <option value="low">Attendance < 50%</option>
+      </select>
+      <select id="sortBySelect">
+        <option value="roll">Sort by Roll Number</option> 
+        <option value="marks">Sort by Marks</option>
+        <option value="attendance">Sort by Attendance</option>
+      </select>
+    </div>
+
+    <table id="studentTable">
+      <thead>
+        <tr>
+          <th>Roll No</th>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Marks(%)</th>
+          <th>Attendance(%)</th>
+          <th>Fee Payment Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="javascript.js"></script>
+
+</body>
+</html>
